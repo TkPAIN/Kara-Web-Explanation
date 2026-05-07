@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kara Tech — Blog</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:#0a0b0f;color:#e0e0e0;line-height:1.5;}
+.container{max-width:1200px;margin:0 auto;padding:0 24px;}
+.header{position:fixed;top:0;left:0;right:0;background:rgba(10,11,15,0.95);backdrop-filter:blur(10px);border-bottom:1px solid #2a2a2a;z-index:1000;padding:16px 0;}
+.header .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.logo{font-size:1.5rem;font-weight:700;color:#c9a84c;text-decoration:none;letter-spacing:-0.5px;}
+.logo span{color:#fff;}
+.nav{display:flex;gap:32px;flex-wrap:wrap;}
+.nav a{color:#ccc;text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.2s;}
+.nav a:hover,.nav a.active{color:#c9a84c;}
+.btn{display:inline-block;padding:12px 28px;border-radius:40px;font-weight:600;text-decoration:none;transition:all 0.2s;cursor:pointer;border:none;font-family:inherit;font-size:0.9rem;}
+.btn-primary{background:#c9a84c;color:#000;}
+.btn-primary:hover{background:#a88830;transform:translateY(-2px);}
+.page-header{padding:120px 0 48px;text-align:center;background:linear-gradient(135deg,#0a0b0f 0%,#111218 100%);border-bottom:1px solid #2a2a2a;}
+.page-header h1{font-size:3rem;color:#fff;margin-bottom:16px;}
+.page-header p{color:#6c6f78;max-width:700px;margin:0 auto;}
+.section{padding:80px 0;}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:32px;}
+.blog-card{background:#111218;border:1px solid #2a2a2a;border-radius:20px;overflow:hidden;transition:transform 0.2s;}
+.blog-card:hover{transform:translateY(-5px);}
+.blog-image{height:200px;background:linear-gradient(135deg,#c9a84c,#a88830);display:flex;align-items:center;justify-content:center;}
+.blog-image i{font-size:4rem;color:#000;}
+.blog-content{padding:24px;}
+.blog-date{font-size:0.7rem;color:#6c6f78;margin-bottom:8px;}
+.blog-card h3{font-size:1.3rem;margin-bottom:12px;color:#fff;}
+.blog-card p{color:#6c6f78;font-size:0.9rem;line-height:1.6;margin-bottom:16px;}
+.read-more{color:#c9a84c;text-decoration:none;font-size:0.85rem;font-weight:500;}
+.read-more:hover{text-decoration:underline;}
+.footer{padding:40px 0;text-align:center;border-top:1px solid #2a2a2a;color:#6c6f78;font-size:0.8rem;}
+@media(max-width:768px){.page-header h1{font-size:2rem;}.blog-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <a href="index.html" class="logo">Kara<span>Tech</span></a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-header">
+    <div class="container">
+      <h1>Blog & News</h1>
+      <p>Tips, tutorials and news about technology and optimization</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="blog-grid">
+        
+        <article class="blog-card">
+          <div class="blog-image"><i class="fas fa-tachometer-alt"></i></div>
+          <div class="blog-content">
+            <div class="blog-date">May 15, 2026 — 5 min read</div>
+            <h3>How to speed up Windows 11: Complete guide</h3>
+            <p>Discover the best tips and scripts to optimize Windows 11 performance, reduce boot time, and improve gaming experience.</p>
+            <a href="#" class="read-more">Read more →</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-image"><i class="fas fa-globe"></i></div>
+          <div class="blog-content">
+            <div class="blog-date">May 10, 2026 — 4 min read</div>
+            <h3>Reduce ping in online games with Nagle OFF</h3>
+            <p>Learn how disabling Nagle's algorithm can reduce your latency by up to 50% in competitive games like Valorant, League of Legends or CS2.</p>
+            <a href="#" class="read-more">Read more →</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-image"><i class="fas fa-shield-alt"></i></div>
+          <div class="blog-content">
+            <div class="blog-date">May 5, 2026 — 6 min read</div>
+            <h3>QoS DSCP 46: What it is and why it matters for gaming</h3>
+            <p>Everything you need to know about Quality of Service and how to prioritize your gaming traffic for a smoother online experience.</p>
+            <a href="#" class="read-more">Read more →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 Kara Tech — Accessible technology for everyone. Improve your computer's performance at no cost.</p>
+  </div>
+</footer>
+</body>
+</html>
