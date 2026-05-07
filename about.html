@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kara Tech — About Us</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:#0a0b0f;color:#e0e0e0;line-height:1.5;}
+.container{max-width:1200px;margin:0 auto;padding:0 24px;}
+.header{position:fixed;top:0;left:0;right:0;background:rgba(10,11,15,0.95);backdrop-filter:blur(10px);border-bottom:1px solid #2a2a2a;z-index:1000;padding:16px 0;}
+.header .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.logo{font-size:1.5rem;font-weight:700;color:#c9a84c;text-decoration:none;letter-spacing:-0.5px;}
+.logo span{color:#fff;}
+.nav{display:flex;gap:32px;flex-wrap:wrap;}
+.nav a{color:#ccc;text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.2s;}
+.nav a:hover,.nav a.active{color:#c9a84c;}
+.btn{display:inline-block;padding:12px 28px;border-radius:40px;font-weight:600;text-decoration:none;transition:all 0.2s;border:none;font-family:inherit;font-size:0.9rem;}
+.btn-primary{background:#c9a84c;color:#000;}
+.btn-primary:hover{background:#a88830;transform:translateY(-2px);}
+.page-header{padding:120px 0 48px;text-align:center;background:linear-gradient(135deg,#0a0b0f 0%,#111218 100%);border-bottom:1px solid #2a2a2a;}
+.page-header h1{font-size:3rem;color:#fff;margin-bottom:16px;}
+.page-header p{color:#6c6f78;max-width:700px;margin:0 auto;}
+.section{padding:80px 0;border-bottom:1px solid #2a2a2a;}
+.section-title{font-size:1.8rem;font-weight:700;margin-bottom:48px;color:#fff;text-align:center;}
+.about-content{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-bottom:60px;}
+.about-text p{margin-bottom:20px;color:#ccc;line-height:1.7;}
+.about-image{background:linear-gradient(135deg,#c9a84c,#a88830);border-radius:24px;height:300px;display:flex;align-items:center;justify-content:center;font-size:5rem;color:#000;}
+.values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;margin-top:40px;}
+.value-card{background:#111218;border:1px solid #2a2a2a;border-radius:20px;padding:32px 24px;text-align:center;}
+.value-card i{font-size:2.5rem;color:#c9a84c;margin-bottom:20px;}
+.value-card h3{font-size:1.3rem;margin-bottom:12px;color:#fff;}
+.value-card p{color:#6c6f78;font-size:0.9rem;line-height:1.6;}
+.mission-vision{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px;}
+.mv-card{background:#111218;border:1px solid #2a2a2a;border-radius:20px;padding:32px;text-align:center;}
+.mv-card i{font-size:2rem;color:#c9a84c;margin-bottom:16px;}
+.mv-card h3{font-size:1.2rem;margin-bottom:12px;color:#fff;}
+.mv-card p{color:#6c6f78;font-size:0.9rem;line-height:1.6;}
+.footer{padding:40px 0;text-align:center;border-top:1px solid #2a2a2a;color:#6c6f78;font-size:0.8rem;}
+@media(max-width:768px){.about-content{grid-template-columns:1fr;}.page-header h1{font-size:2rem;}.section-title{font-size:1.5rem;}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <a href="index.html" class="logo">Kara<span>Tech</span></a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-header">
+    <div class="container">
+      <h1>About us</h1>
+      <p>We make advanced technology accessible to everyone</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <p>I'm Marcos, a developer and creator of digital solutions with over 5 years of experience helping people and businesses get the most out of their technology. My journey began when I realized that many technical solutions were locked behind expensive paywalls or required advanced knowledge that most people don't have.</p>
+          <p>That's why I created Kara Tech — to democratize access to high-quality technical solutions. Every tool we develop is free, open-source, and designed to be used by anyone, regardless of their technical background.</p>
+          <p>Our mission is simple: <strong>make your computer and internet work better, at no cost</strong>. We believe that optimizing technology should be a right, not a luxury.</p>
+        </div>
+        <div class="about-image">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <i class="fas fa-lightbulb"></i>
+          <h3>Open innovation</h3>
+          <p>All our code is open source. Anyone can inspect, modify, and improve it.</p>
+        </div>
+        <div class="value-card">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Full transparency</h3>
+          <p>No hidden fees, no data collection, no surprises. Just honest solutions.</p>
+        </div>
+        <div class="value-card">
+          <i class="fas fa-hand-holding-heart"></i>
+          <h3>Real commitment</h3>
+          <p>We're not just here to sell software. We're here to make a difference.</p>
+        </div>
+      </div>
+
+      <div class="mission-vision">
+        <div class="mv-card">
+          <i class="fas fa-bullseye"></i>
+          <h3>Our mission</h3>
+          <p>To provide free, high-quality technical solutions that improve people's digital lives without barriers.</p>
+        </div>
+        <div class="mv-card">
+          <i class="fas fa-eye"></i>
+          <h3>Our vision</h3>
+          <p>A world where everyone has access to fast, reliable, and optimized technology regardless of their budget.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 Kara Tech — Accessible technology for everyone. Improve your computer's performance at no cost.</p>
+  </div>
+</footer>
+</body>
+</html>
