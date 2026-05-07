@@ -10,7 +10,6 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Inter',sans-serif;background:#0a0b0f;color:#e0e0e0;line-height:1.5;}
 .container{max-width:1200px;margin:0 auto;padding:0 24px;}
-/* Header */
 .header{position:fixed;top:0;left:0;right:0;background:rgba(10,11,15,0.95);backdrop-filter:blur(10px);border-bottom:1px solid #2a2a2a;z-index:1000;padding:16px 0;}
 .header .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
 .logo{font-size:1.5rem;font-weight:700;color:#c9a84c;text-decoration:none;letter-spacing:-0.5px;}
@@ -40,13 +39,23 @@ body{font-family:'Inter',sans-serif;background:#0a0b0f;color:#e0e0e0;line-height
 .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:32px;text-align:center;padding:40px 0;border-top:1px solid #2a2a2a;margin-top:40px;}
 .metric h4{font-size:2.5rem;font-weight:700;color:#c9a84c;margin-bottom:8px;}
 .metric p{font-size:0.85rem;color:#6c6f78;}
+.testimonials{background:#111218;border-radius:24px;padding:48px 32px;margin-top:40px;}
+.testimonials h3{text-align:center;font-size:1.5rem;margin-bottom:32px;color:#fff;}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px;}
+.testimonial-card{background:#0a0b0f;border-radius:16px;padding:24px;border:1px solid #2a2a2a;}
+.testimonial-text{font-size:0.9rem;color:#ccc;line-height:1.6;margin-bottom:16px;font-style:italic;}
+.testimonial-author{display:flex;align-items:center;gap:12px;}
+.testimonial-avatar{width:40px;height:40px;background:#c9a84c;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:bold;}
+.testimonial-name{font-weight:600;color:#fff;font-size:0.9rem;}
+.testimonial-title{font-size:0.7rem;color:#6c6f78;}
+.stars{color:#c9a84c;font-size:0.7rem;margin-top:8px;}
 .cta{background:linear-gradient(135deg,#c9a84c,#a88830);color:#000;text-align:center;padding:60px 24px;border-radius:24px;margin-top:40px;}
 .cta h3{font-size:1.8rem;margin-bottom:16px;}
 .cta p{margin-bottom:24px;font-size:1rem;opacity:0.9;}
 .cta .btn-outline{border-color:#000;color:#000;}
 .cta .btn-outline:hover{background:#000;color:#c9a84c;border-color:#000;}
 .footer{padding:40px 0;text-align:center;border-top:1px solid #2a2a2a;color:#6c6f78;font-size:0.8rem;}
-@media(max-width:768px){.hero h1{font-size:2.2rem;}.hero p{font-size:1rem;}.nav{gap:20px;}}
+@media(max-width:768px){.hero h1{font-size:2.2rem;}.hero p{font-size:1rem;}.nav{gap:20px;}.testimonials{padding:32px 20px;}}
 </style>
 </head>
 <body>
@@ -103,6 +112,46 @@ body{font-family:'Inter',sans-serif;background:#0a0b0f;color:#e0e0e0;line-height
         <div class="metric"><h4>+200</h4><p>Happy clients</p></div>
         <div class="metric"><h4>95%</h4><p>Issues resolved within 24h</p></div>
         <div class="metric"><h4>100%</h4><p>Free solutions</p></div>
+      </div>
+
+      <!-- TESTIMONIALS SECTION -->
+      <div class="testimonials">
+        <h3>What our clients say</h3>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-text">"My PC was extremely slow. After using Kara Tech's Windows optimization script, it runs like new. The instructions were clear and it took me just 5 minutes. Highly recommended!"</div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">CR</div>
+              <div>
+                <div class="testimonial-name">Carlos Rodríguez</div>
+                <div class="testimonial-title">Gamer & Content Creator</div>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-text">"The network optimization script reduced my ping from 120ms to 45ms in Valorant. I can finally play competitively without lag. And it's completely free. Thank you Kara Tech!"</div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">MG</div>
+              <div>
+                <div class="testimonial-name">María González</div>
+                <div class="testimonial-title">Esports Player</div>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-text">"I run a small business with 15 computers. The optimization scripts saved me hours of manual work and improved our team's productivity significantly. The support is also top-notch."</div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">JL</div>
+              <div>
+                <div class="testimonial-name">Javier López</div>
+                <div class="testimonial-title">Small Business Owner</div>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="cta">
