@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kara Tech — Our Services</title>
+<title>Kara Tech — Our Services | Free Optimization Tools</title>
+<meta name="description" content="Free Windows optimization scripts, network tweaks, web development, automation, and technical support. All tools are open-source and free to use.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23c9a84c' rx='20'/%3E%3Ctext x='50' y='68' font-size='50' text-anchor='middle' fill='%230a0b0f' font-family='Arial, sans-serif' font-weight='bold'%3EK%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
@@ -17,14 +19,13 @@ body{font-family:'Inter',sans-serif;background:#0a0b0f;color:#e0e0e0;line-height
 .nav{display:flex;gap:32px;flex-wrap:wrap;}
 .nav a{color:#ccc;text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.2s;}
 .nav a:hover,.nav a.active{color:#c9a84c;}
-.btn{display:inline-block;padding:12px 28px;border-radius:40px;font-weight:600;text-decoration:none;transition:all 0.2s;border:none;font-family:inherit;font-size:0.9rem;}
+.btn{display:inline-block;padding:12px 28px;border-radius:40px;font-weight:600;text-decoration:none;transition:all 0.2s;border:none;font-family:inherit;font-size:0.9rem;cursor:pointer;}
 .btn-primary{background:#c9a84c;color:#000;}
 .btn-primary:hover{background:#a88830;transform:translateY(-2px);}
-.page-header{padding:120px 0 48px;text-align:center;background:linear-gradient(135deg,#0a0b0f 0%,#111218 100%);border-bottom:1px solid #2a2a2a;}
+.page-header{padding:120px 0 48px;text-align:center;border-bottom:1px solid #2a2a2a;}
 .page-header h1{font-size:3rem;color:#fff;margin-bottom:16px;}
 .page-header p{color:#6c6f78;max-width:700px;margin:0 auto;}
 .section{padding:80px 0;}
-.section-title{font-size:1.8rem;font-weight:700;margin-bottom:48px;color:#fff;text-align:center;}
 .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px;}
 .service-card{background:#111218;border:1px solid #2a2a2a;border-radius:20px;padding:32px;transition:transform 0.2s;}
 .service-card:hover{transform:translateY(-5px);}
@@ -36,7 +37,7 @@ body{font-family:'Inter',sans-serif;background:#0a0b0f;color:#e0e0e0;line-height
 .service-features li{font-size:0.8rem;color:#aaa;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
 .service-features li i{color:#4caf50;font-size:0.7rem;}
 .footer{padding:40px 0;text-align:center;border-top:1px solid #2a2a2a;color:#6c6f78;font-size:0.8rem;}
-@media(max-width:768px){.page-header h1{font-size:2rem;}.services-grid{grid-template-columns:1fr;}}
+@media(max-width:768px){.page-header h1{font-size:2rem;}.nav{gap:16px;flex-wrap:wrap;justify-content:center;}}
 </style>
 </head>
 <body>
@@ -45,13 +46,13 @@ body{font-family:'Inter',sans-serif;background:#0a0b0f;color:#e0e0e0;line-height
   <div class="container">
     <a href="index.html" class="logo">Kara<span>Tech</span></a>
     <nav class="nav">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="blog.html">Blog</a>
-  <a href="contact.html">Contact</a>
-  <a href="privacy.html">Privacy</a>
-</nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
   </div>
 </header>
 
@@ -66,86 +67,17 @@ body{font-family:'Inter',sans-serif;background:#0a0b0f;color:#e0e0e0;line-height
   <section class="section">
     <div class="container">
       <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-tachometer-alt"></i></div>
-          <h3>Windows Optimization</h3>
-          <p>Professional PowerShell scripts that dramatically improve your PC's performance by disabling unnecessary processes, optimizing network settings, and cleaning temporary files.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Nagle OFF for lower latency</li>
-            <li><i class="fas fa-check"></i> Cloudflare DNS configuration</li>
-            <li><i class="fas fa-check"></i> High performance power plan</li>
-            <li><i class="fas fa-check"></i> Telemetry and background apps disabled</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-globe"></i></div>
-          <h3>Network Optimization</h3>
-          <p>Advanced tweaks to reduce latency, increase bandwidth efficiency, and stabilize your internet connection for gaming, streaming, or work.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> QoS DSCP 46 for gaming priority</li>
-            <li><i class="fas fa-check"></i> Network throttling disabled</li>
-            <li><i class="fas fa-check"></i> Optimized TCP parameters</li>
-            <li><i class="fas fa-check"></i> DNS cache optimization</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-code"></i></div>
-          <h3>Web Development</h3>
-          <p>Fast, modern, and fully responsive websites designed to perform perfectly on any device. No bloated frameworks, just clean code.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Responsive design</li>
-            <li><i class="fas fa-check"></i> SEO optimized</li>
-            <li><i class="fas fa-check"></i> Fast loading times</li>
-            <li><i class="fas fa-check"></i> Custom animations</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-robot"></i></div>
-          <h3>Automation</h3>
-          <p>Custom scripts and automations that save you hours of repetitive work. From file organization to complex workflows.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Batch file processing</li>
-            <li><i class="fas fa-check"></i> Scheduled tasks</li>
-            <li><i class="fas fa-check"></i> Data scraping and processing</li>
-            <li><i class="fas fa-check"></i> Custom API integrations</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-database"></i></div>
-          <h3>System Maintenance</h3>
-          <p>Keep your system clean, fast, and secure with regular maintenance scripts that remove junk files and optimize performance.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Automatic temporary file cleanup</li>
-            <li><i class="fas fa-check"></i> Registry optimization</li>
-            <li><i class="fas fa-check"></i> Disk health monitoring</li>
-            <li><i class="fas fa-check"></i> Startup management</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-headset"></i></div>
-          <h3>Technical Support</h3>
-          <p>Fast, friendly, and effective remote assistance. I'm here to help you solve any technical problem you might have.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Remote assistance</li>
-            <li><i class="fas fa-check"></i> Problem diagnosis</li>
-            <li><i class="fas fa-check"></i> Step-by-step guidance</li>
-            <li><i class="fas fa-check"></i> 24h response time</li>
-          </ul>
-        </div>
+        <div class="service-card"><div class="service-icon"><i class="fas fa-tachometer-alt"></i></div><h3>Windows Optimization</h3><p>Professional PowerShell scripts that dramatically improve your PC's performance by disabling unnecessary processes, optimizing network settings, and cleaning temporary files.</p><ul class="service-features"><li><i class="fas fa-check"></i> Nagle OFF for lower latency</li><li><i class="fas fa-check"></i> Cloudflare DNS configuration</li><li><i class="fas fa-check"></i> High performance power plan</li><li><i class="fas fa-check"></i> Telemetry and background apps disabled</li></ul></div>
+        <div class="service-card"><div class="service-icon"><i class="fas fa-globe"></i></div><h3>Network Optimization</h3><p>Advanced tweaks to reduce latency, increase bandwidth efficiency, and stabilize your internet connection for gaming, streaming, or work.</p><ul class="service-features"><li><i class="fas fa-check"></i> QoS DSCP 46 for gaming priority</li><li><i class="fas fa-check"></i> Network throttling disabled</li><li><i class="fas fa-check"></i> Optimized TCP parameters</li><li><i class="fas fa-check"></i> DNS cache optimization</li></ul></div>
+        <div class="service-card"><div class="service-icon"><i class="fas fa-code"></i></div><h3>Web Development</h3><p>Fast, modern, and fully responsive websites designed to perform perfectly on any device. No bloated frameworks, just clean code.</p><ul class="service-features"><li><i class="fas fa-check"></i> Responsive design</li><li><i class="fas fa-check"></i> SEO optimized</li><li><i class="fas fa-check"></i> Fast loading times</li><li><i class="fas fa-check"></i> Custom animations</li></ul></div>
+        <div class="service-card"><div class="service-icon"><i class="fas fa-robot"></i></div><h3>Automation</h3><p>Custom scripts and automations that save you hours of repetitive work. From file organization to complex workflows.</p><ul class="service-features"><li><i class="fas fa-check"></i> Batch file processing</li><li><i class="fas fa-check"></i> Scheduled tasks</li><li><i class="fas fa-check"></i> Data scraping and processing</li><li><i class="fas fa-check"></i> Custom API integrations</li></ul></div>
+        <div class="service-card"><div class="service-icon"><i class="fas fa-database"></i></div><h3>System Maintenance</h3><p>Keep your system clean, fast, and secure with regular maintenance scripts that remove junk files and optimize performance.</p><ul class="service-features"><li><i class="fas fa-check"></i> Automatic temporary file cleanup</li><li><i class="fas fa-check"></i> Registry optimization</li><li><i class="fas fa-check"></i> Disk health monitoring</li><li><i class="fas fa-check"></i> Startup management</li></ul></div>
+        <div class="service-card"><div class="service-icon"><i class="fas fa-headset"></i></div><h3>Technical Support</h3><p>Fast, friendly, and effective remote assistance. I'm here to help you solve any technical problem you might have.</p><ul class="service-features"><li><i class="fas fa-check"></i> Remote assistance</li><li><i class="fas fa-check"></i> Problem diagnosis</li><li><i class="fas fa-check"></i> Step-by-step guidance</li><li><i class="fas fa-check"></i> 24h response time</li></ul></div>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="footer">
-  <div class="container">
-    <p>© 2026 Kara Tech — Accessible technology for everyone. Improve your computer's performance at no cost.</p>
-  </div>
-</footer>
+<footer class="footer"><div class="container"><p>© 2026 Kara Tech — Accessible technology for everyone. Improve your computer's performance at no cost.</p></div></footer>
 </body>
 </html>
