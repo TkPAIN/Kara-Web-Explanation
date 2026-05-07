@@ -3,530 +3,79 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kara Tech — Performance & Technology</title>
+<title>Kara Tech — Performance Solutions</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-:root {
-  --primary: #c9a84c;
-  --primary-dark: #a88830;
-  --dark: #0a0b0f;
-  --dark2: #111218;
-  --gray: #6c6f78;
-  --light: #f5f5f0;
-  --white: #ffffff;
-  --border: #2a2a2a;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--dark);
-  color: #e0e0e0;
-  line-height: 1.5;
-  scroll-behavior: smooth;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:#0a0b0f;color:#e0e0e0;line-height:1.5;}
+.container{max-width:1200px;margin:0 auto;padding:0 24px;}
 /* Header */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(10, 11, 15, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
-  z-index: 1000;
-  padding: 16px 0;
-}
-
-.header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary);
-  text-decoration: none;
-  letter-spacing: -0.5px;
-}
-
-.logo span {
-  color: var(--white);
-}
-
-.nav {
-  display: flex;
-  gap: 32px;
-  flex-wrap: wrap;
-}
-
-.nav a {
-  color: #ccc;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.nav a:hover {
-  color: var(--primary);
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: 12px 28px;
-  border-radius: 40px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s;
-  cursor: pointer;
-  border: none;
-  font-family: inherit;
-  font-size: 0.9rem;
-}
-
-.btn-primary {
-  background: var(--primary);
-  color: #000;
-}
-
-.btn-primary:hover {
-  background: var(--primary-dark);
-  transform: translateY(-2px);
-}
-
-.btn-outline {
-  border: 1px solid var(--primary);
-  color: var(--primary);
-  background: transparent;
-}
-
-.btn-outline:hover {
-  background: var(--primary);
-  color: #000;
-}
-
-/* Hero */
-.hero {
-  padding: 140px 0 80px;
-  text-align: center;
-  background: linear-gradient(135deg, #0a0b0f 0%, #111218 100%);
-  border-bottom: 1px solid var(--border);
-}
-
-.hero h1 {
-  font-size: 3.2rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 20px;
-  line-height: 1.2;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  color: #aaa;
-  max-width: 700px;
-  margin: 0 auto 32px;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* Sections */
-.section {
-  padding: 80px 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 16px;
-  color: var(--white);
-}
-
-.section-subtitle {
-  text-align: center;
-  color: var(--gray);
-  max-width: 700px;
-  margin: 0 auto 48px;
-  font-size: 1rem;
-}
-
-/* Pillars (Who we are) */
-.pillars {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 32px;
-  margin-top: 40px;
-}
-
-.pillar {
-  background: var(--dark2);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 32px 24px;
-  text-align: center;
-  transition: transform 0.2s;
-}
-
-.pillar:hover {
-  transform: translateY(-5px);
-}
-
-.pillar i {
-  font-size: 2.5rem;
-  color: var(--primary);
-  margin-bottom: 20px;
-}
-
-.pillar h3 {
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-  color: var(--white);
-}
-
-.pillar p {
-  color: var(--gray);
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
-
-/* Services */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 32px;
-  margin-bottom: 60px;
-}
-
-.service-card {
-  background: var(--dark2);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 32px 24px;
-  transition: transform 0.2s;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-}
-
-.service-icon {
-  width: 60px;
-  height: 60px;
-  background: rgba(201, 168, 76, 0.1);
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 24px;
-}
-
-.service-icon i {
-  font-size: 1.8rem;
-  color: var(--primary);
-}
-
-.service-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 12px;
-  color: var(--white);
-}
-
-.service-card p {
-  color: var(--gray);
-  font-size: 0.85rem;
-  line-height: 1.6;
-}
-
-/* Metrics */
-.metrics {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 32px;
-  text-align: center;
-  padding: 40px 0;
-  border-top: 1px solid var(--border);
-  margin-top: 40px;
-}
-
-.metric h4 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--primary);
-  margin-bottom: 8px;
-}
-
-.metric p {
-  font-size: 0.85rem;
-  color: var(--gray);
-}
-
-/* Process (Why we do it) */
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 24px;
-  margin: 48px 0;
-}
-
-.process-step {
-  text-align: center;
-  padding: 24px;
-}
-
-.step-num {
-  width: 48px;
-  height: 48px;
-  background: var(--primary);
-  color: #000;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  margin: 0 auto 16px;
-}
-
-.process-step h4 {
-  font-size: 1rem;
-  margin-bottom: 8px;
-  color: var(--white);
-}
-
-.process-step p {
-  font-size: 0.8rem;
-  color: var(--gray);
-}
-
-.quote {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  color: #000;
-  text-align: center;
-  padding: 48px;
-  border-radius: 24px;
-  margin-top: 40px;
-}
-
-.quote p {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 16px;
-}
-
-.quote span {
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-/* Contact */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  margin-top: 40px;
-}
-
-.contact-info h3,
-.contact-form h3 {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  color: var(--white);
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
-.contact-item i {
-  width: 40px;
-  height: 40px;
-  background: var(--dark2);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary);
-}
-
-.contact-item a {
-  color: #ccc;
-  text-decoration: none;
-}
-
-.contact-item a:hover {
-  color: var(--primary);
-}
-
-.social-links {
-  display: flex;
-  gap: 16px;
-  margin-top: 32px;
-}
-
-.social-links a {
-  width: 40px;
-  height: 40px;
-  background: var(--dark2);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ccc;
-  transition: all 0.2s;
-}
-
-.social-links a:hover {
-  background: var(--primary);
-  color: #000;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 14px 16px;
-  background: var(--dark2);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  color: var(--white);
-  font-family: inherit;
-  font-size: 0.9rem;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--primary);
-}
-
-/* Footer */
-.footer {
-  padding: 40px 0;
-  text-align: center;
-  border-top: 1px solid var(--border);
-  color: var(--gray);
-  font-size: 0.8rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-  
-  .hero p {
-    font-size: 1rem;
-  }
-  
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  
-  .nav {
-    gap: 20px;
-  }
-  
-  .quote p {
-    font-size: 1.1rem;
-  }
-}
+.header{position:fixed;top:0;left:0;right:0;background:rgba(10,11,15,0.95);backdrop-filter:blur(10px);border-bottom:1px solid #2a2a2a;z-index:1000;padding:16px 0;}
+.header .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.logo{font-size:1.5rem;font-weight:700;color:#c9a84c;text-decoration:none;letter-spacing:-0.5px;}
+.logo span{color:#fff;}
+.nav{display:flex;gap:32px;flex-wrap:wrap;}
+.nav a{color:#ccc;text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.2s;}
+.nav a:hover,.nav a.active{color:#c9a84c;}
+.btn{display:inline-block;padding:12px 28px;border-radius:40px;font-weight:600;text-decoration:none;transition:all 0.2s;cursor:pointer;border:none;font-family:inherit;font-size:0.9rem;}
+.btn-primary{background:#c9a84c;color:#000;}
+.btn-primary:hover{background:#a88830;transform:translateY(-2px);}
+.btn-outline{border:1px solid #c9a84c;color:#c9a84c;background:transparent;}
+.btn-outline:hover{background:#c9a84c;color:#000;}
+.hero{padding:140px 0 80px;text-align:center;background:linear-gradient(135deg,#0a0b0f 0%,#111218 100%);border-bottom:1px solid #2a2a2a;}
+.hero h1{font-size:3.2rem;font-weight:700;background:linear-gradient(135deg,#fff 0%,#c9a84c 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;line-height:1.2;}
+.hero p{font-size:1.2rem;color:#aaa;max-width:700px;margin:0 auto 32px;}
+.hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.section{padding:80px 0;border-bottom:1px solid #2a2a2a;}
+.section-title{text-align:center;font-size:2rem;font-weight:700;margin-bottom:16px;color:#fff;}
+.section-subtitle{text-align:center;color:#6c6f78;max-width:700px;margin:0 auto 48px;font-size:1rem;}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;margin-bottom:60px;}
+.service-card{background:#111218;border:1px solid #2a2a2a;border-radius:20px;padding:32px 24px;transition:transform 0.2s;}
+.service-card:hover{transform:translateY(-5px);}
+.service-icon{width:60px;height:60px;background:rgba(201,168,76,0.1);border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;}
+.service-icon i{font-size:1.8rem;color:#c9a84c;}
+.service-card h3{font-size:1.2rem;margin-bottom:12px;color:#fff;}
+.service-card p{color:#6c6f78;font-size:0.85rem;line-height:1.6;}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:32px;text-align:center;padding:40px 0;border-top:1px solid #2a2a2a;margin-top:40px;}
+.metric h4{font-size:2.5rem;font-weight:700;color:#c9a84c;margin-bottom:8px;}
+.metric p{font-size:0.85rem;color:#6c6f78;}
+.cta{background:linear-gradient(135deg,#c9a84c,#a88830);color:#000;text-align:center;padding:60px 24px;border-radius:24px;margin-top:40px;}
+.cta h3{font-size:1.8rem;margin-bottom:16px;}
+.cta p{margin-bottom:24px;font-size:1rem;opacity:0.9;}
+.cta .btn-outline{border-color:#000;color:#000;}
+.cta .btn-outline:hover{background:#000;color:#c9a84c;border-color:#000;}
+.footer{padding:40px 0;text-align:center;border-top:1px solid #2a2a2a;color:#6c6f78;font-size:0.8rem;}
+@media(max-width:768px){.hero h1{font-size:2.2rem;}.hero p{font-size:1rem;}.nav{gap:20px;}}
 </style>
 </head>
 <body>
 
 <header class="header">
   <div class="container">
-    <a href="#" class="logo">Kara<span>Tech</span></a>
+    <a href="index.html" class="logo">Kara<span>Tech</span></a>
     <nav class="nav">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#why">Why</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <!-- HERO -->
-  <section id="home" class="hero">
+  <section class="hero">
     <div class="container">
       <h1>Improve your computer's performance<br>at no cost</h1>
       <p>We all deserve good internet and optimized technology. Accessible, transparent, and effective solutions for individuals and businesses.</p>
       <div class="hero-buttons">
-        <a href="#services" class="btn btn-primary">View solutions</a>
-        <a href="#contact" class="btn btn-outline">Contact us</a>
+        <a href="services.html" class="btn btn-primary">View solutions</a>
+        <a href="contact.html" class="btn btn-outline">Contact us</a>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT US -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2 class="section-title">Who are we?</h2>
-      <p class="section-subtitle">Efficient, accessible technology for everyone</p>
-      
-      <div class="pillars">
-        <div class="pillar">
-          <i class="fas fa-lightbulb"></i>
-          <h3>Open innovation</h3>
-          <p>We believe technology should be shared. That's why we develop open-source solutions, accessible to all.</p>
-        </div>
-        <div class="pillar">
-          <i class="fas fa-shield-alt"></i>
-          <h3>Full transparency</h3>
-          <p>No surprises. We explain every optimization and give you tools to revert any change.</p>
-        </div>
-        <div class="pillar">
-          <i class="fas fa-hand-holding-heart"></i>
-          <h3>Real commitment</h3>
-          <p>We don't just sell software. We believe in a better internet and work to make it happen.</p>
-        </div>
-      </div>
-
-      <div style="text-align: center; margin-top: 48px;">
-        <p style="font-size: 1rem; color: #ccc; max-width: 700px; margin: 0 auto;">I'm a developer and creator of digital solutions with over 5 years of experience helping people and businesses get the most out of their technology. My mission is clear: <strong style="color: var(--primary);">making advanced technology accessible to everyone</strong>.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" class="section">
+  <section class="section">
     <div class="container">
       <h2 class="section-title">What do we do?</h2>
       <p class="section-subtitle">Practical solutions for real problems</p>
@@ -543,137 +92,23 @@ body {
           <p>Improve your internet connection with advanced tweaks: Nagle OFF, QoS, optimized DNS, and more. Less latency, more speed.</p>
         </div>
         <div class="service-card">
-          <div class="service-icon"><i class="fab fa-discord"></i></div>
-          <h3>Discord Bots</h3>
-          <p>Automate your community with custom bots: welcome messages, tickets, announcements, moderation, and much more.</p>
-        </div>
-        <div class="service-card">
           <div class="service-icon"><i class="fas fa-code"></i></div>
           <h3>Web Development</h3>
           <p>Fast, modern, and optimized websites for your business or personal project. Responsive design and guaranteed performance.</p>
         </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-robot"></i></div>
-          <h3>Automation</h3>
-          <p>Automate repetitive tasks with custom scripts and tools. Save time and resources.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-headset"></i></div>
-          <h3>Technical Support</h3>
-          <p>Fast and effective remote assistance. We solve your doubts and technical problems without complications.</p>
-        </div>
       </div>
 
       <div class="metrics">
-        <div class="metric">
-          <h4>+500</h4>
-          <p>Devices optimized</p>
-        </div>
-        <div class="metric">
-          <h4>+200</h4>
-          <p>Happy clients</p>
-        </div>
-        <div class="metric">
-          <h4>95%</h4>
-          <p>Issues resolved within 24h</p>
-        </div>
-        <div class="metric">
-          <h4>100%</h4>
-          <p>Free solutions</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY WE DO IT -->
-  <section id="why" class="section">
-    <div class="container">
-      <h2 class="section-title">Why do we do it?</h2>
-      <p class="section-subtitle">A better internet is possible. And it starts with you.</p>
-
-      <div class="process-grid">
-        <div class="process-step">
-          <div class="step-num">1</div>
-          <h4>Analyze</h4>
-          <p>We study your needs and your team's to understand what you can improve.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-num">2</div>
-          <h4>Design</h4>
-          <p>We create a tailored strategy with accessible and effective tools.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-num">3</div>
-          <h4>Implement</h4>
-          <p>We apply solutions transparently, explaining each step.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-num">4</div>
-          <h4>Support</h4>
-          <p>Continuous support and updates. We're here when you need us.</p>
-        </div>
+        <div class="metric"><h4>+500</h4><p>Devices optimized</p></div>
+        <div class="metric"><h4>+200</h4><p>Happy clients</p></div>
+        <div class="metric"><h4>95%</h4><p>Issues resolved within 24h</p></div>
+        <div class="metric"><h4>100%</h4><p>Free solutions</p></div>
       </div>
 
-      <div class="quote">
-        <p>"We all should have good internet and optimized technology. That's why everything we do is free, open, and accessible."</p>
-        <span>— Founder of Kara Tech</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2 class="section-title">Let's talk?</h2>
-      <p class="section-subtitle">Tell me about your project or question. I'm here to help.</p>
-
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h3>Direct contact</h3>
-          <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <div>
-              <strong>Email</strong><br>
-              <a href="mailto:hello@karatech.com">hello@karatech.com</a>
-            </div>
-          </div>
-          <div class="contact-item">
-            <i class="fab fa-discord"></i>
-            <div>
-              <strong>Discord</strong><br>
-              <a href="https://discord.gg/6A6C7aRV" target="_blank">Join our server</a>
-            </div>
-          </div>
-          <div class="contact-item">
-            <i class="fab fa-telegram"></i>
-            <div>
-              <strong>Telegram</strong><br>
-              <a href="https://t.me/+xW5XBTxE09BlYzM0" target="_blank">News channel</a>
-            </div>
-          </div>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-        </div>
-
-        <div class="contact-form">
-          <h3>Send me a message</h3>
-          <form id="contact-form">
-            <div class="form-group">
-              <input type="text" id="contact-name" placeholder="Your name" required>
-            </div>
-            <div class="form-group">
-              <input type="email" id="contact-email" placeholder="Your email" required>
-            </div>
-            <div class="form-group">
-              <textarea id="contact-message" rows="4" placeholder="How can I help you?" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Send message</button>
-            <div id="contact-msg" style="font-size: 0.8rem; margin-top: 12px; text-align: center;"></div>
-          </form>
-        </div>
+      <div class="cta">
+        <h3>Ready to optimize your technology?</h3>
+        <p>Get in touch and let's talk about your project.</p>
+        <a href="contact.html" class="btn btn-outline">Get in touch →</a>
       </div>
     </div>
   </section>
@@ -684,47 +119,5 @@ body {
     <p>© 2026 Kara Tech — Accessible technology for everyone. Improve your computer's performance at no cost.</p>
   </div>
 </footer>
-
-<script>
-// Contact form with Discord webhook
-const WEBHOOK_URL = 'https://discord.com/api/webhooks/1501769150928781425/ARlBGiC8OXBLtyGL-_kLMwe9mSXBTADkrfkqEvRMnOLTInvKuY3t-1U6kfR1LvFrOq44';
-
-document.getElementById('contact-form').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const name = document.getElementById('contact-name').value;
-  const email = document.getElementById('contact-email').value;
-  const message = document.getElementById('contact-message').value;
-  const msgDiv = document.getElementById('contact-msg');
-  
-  if (!name || !email || !message) {
-    msgDiv.textContent = '❌ Please fill out all fields';
-    msgDiv.style.color = '#e74c3c';
-    return;
-  }
-  
-  msgDiv.textContent = '📡 Sending...';
-  msgDiv.style.color = '#c9a84c';
-  
-  try {
-    await fetch(WEBHOOK_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        content: `📬 **New message from website**\n\n**Name:** ${name}\n**Email:** ${email}\n**Message:**\n${message}`,
-        username: 'Kara Tech Web'
-      })
-    });
-    
-    msgDiv.textContent = '✅ Message sent. I will get back to you soon.';
-    msgDiv.style.color = '#4caf50';
-    document.getElementById('contact-form').reset();
-    
-    setTimeout(() => { msgDiv.textContent = ''; }, 5000);
-  } catch (err) {
-    msgDiv.textContent = '❌ Error sending message. Please try again.';
-    msgDiv.style.color = '#e74c3c';
-  }
-});
-</script>
 </body>
 </html>
