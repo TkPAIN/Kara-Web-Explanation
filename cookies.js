@@ -1,55 +1,27 @@
-/**
- * ================================================================
- * SISTEMA DE CONSENTIMIENTO DE COOKIES — Kara Tech
- * Compatible con RGPD / GDPR
- * ================================================================
- */
-
 const COOKIE_STORAGE_KEY = 'kara_tech_cookie_consent';
-const CATEGORIES = {
-    necessary: 'necessary',
-    analytics: 'analytics',
-    marketing: 'marketing'
-};
-
+const CATEGORIES = { necessary: 'necessary', analytics: 'analytics', marketing: 'marketing' };
 const pendingScripts = [];
 
-function registerScript(src, category) {
-    pendingScripts.push({ src, category });
-}
+function registerScript(src, category) { pendingScripts.push({ src, category }); }
 
-function loadScript(src) {
-    return new Promise((resolve, reject) => {
-        if (document.querySelector(`script[src="${src}"]`)) {
-            resolve();
-            return;
-        }
-        const script = document.createElement('script');
-        script.src = src;
-        script.async = true;
-        script.onload = resolve;
-        script.onerror = reject;
-        document.head.appendChild(script);
-    });
-}
-
-async function loadConsentedScripts(allowedCategories) {
-    for (const entry of pendingScripts) {
-        if (allowedCategories.includes(entry.category)) {
-            try {
-                await loadScript(entry.src);
-                console.log(`[Cookies] Script cargado (${entry.category}): ${entry.src}`);
-            } catch (e) {
-                console.warn(`[Cookies] Error al cargar script: ${entry.src}`, e);
-            }
-        }
-    }
-}
-
-function getStoredConsent() {
-    try {
-        const stored = localStorage.getItem(COOKIE_STORAGE_KEY);
-        return stored ? JSON.parse(stored) : null;
+function loadScript(src) { … }
+async function loadConsentedScripts(allowedCategories) { … }
+function getStoredConsent() { … }
+function saveConsent(consent) { … }
+function acceptAllCookies() { … }
+function rejectAllCookies() { … }
+function saveCookieSettings() { … }
+function applyConsent(consent) { … }
+function hideBanner() { … }
+function showBanner() { … }
+function hideSettingsPanel() { … }
+function openCookieSettings() { … }
+function closeCookieSettings() { … }
+function showFloatingButton() { … }
+function initCookieSystem() { … }
+function clearCookieConsent() { … }
+window.clearCookieConsent = clearCookieConsent;
+document.addEventListener('DOMContentLoaded', initCookieSystem);        return stored ? JSON.parse(stored) : null;
     } catch (e) {
         return null;
     }
