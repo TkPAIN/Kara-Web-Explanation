@@ -298,7 +298,48 @@
 
     <!-- Botón flotante -->
     <button id="cookie-floating-btn" class="cookie-floating-btn" onclick="openCookieSettings()" aria-label="Configurar cookies" title="Configurar cookies" style="display:none;"><i class="fas fa-cookie"></i></button>
-
+<script>
+    // Cargar testimonios desde GitHub Issues del repo kara-clan-win-op
+    async function loadTestimonials() {
+        const container = document.getElementById('dynamic-testimonials');
+        const apiUrl = 'https://api.github.com/repos/TkPAIN/kara-clan-win-op/issues?labels=review&state=open';
+        try {
+            const response = await fetch(apiUrl);
+            if (!response.ok) throw new Error('No se pudieron cargar las reseñas');
+            const issues = await response.json();
+            if (issues.length === 0) {
+                container.innerHTML = '<p class="loading-text" style="grid-column:1/-1;">Aún no hay reseñas. ¡Sé el primero en probar los scripts y dejar tu opinión!</p>';
+                return;
+            }
+            container.innerHTML = '';
+            issues.forEach(issue => {
+                const parts = issue.title.split('—').map(p => p.trim());
+                const username = parts[0] || 'Usuario';
+                const volume = parts[1] || '';
+                const avatarLetter = username.charAt(0).toUpperCase();
+                const body = issue.body ? issue.body.replace(/</g, '&lt;').replace(/>/g, '&gt;') : 'Sin comentario.';
+                const div = document.createElement('div');
+                div.className = 'testimonial';
+                div.innerHTML = `
+                    <p class="testimonial-text">"${body}"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">${avatarLetter}</div>
+                        <div>
+                            <div class="testimonial-name">${username}</div>
+                            <div class="testimonial-role">${volume}</div>
+                        </div>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                `;
+                container.appendChild(div);
+            });
+        } catch (error) {
+            container.innerHTML = '<p class="loading-text" style="grid-column:1/-1;">No se pudieron cargar las reseñas en este momento.</p>';
+        }
+    }
+    // Cargar al iniciar
+    document.addEventListener('DOMContentLoaded', loadTestimonials);
+</script>
     <script src="cookies.js"></script>
 <!-- Widget de soporte Discord y Telegram -->
 <div class="support-widget" id="support-widget">
