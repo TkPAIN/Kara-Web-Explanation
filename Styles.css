@@ -12,8 +12,6 @@
     --border: #2a2510;
     --text: #e0e0e0;
     --muted: #8b8b8b;
-    --red: #c0392b;
-    --transition-speed: 0.3s;
 }
 
 /* ─── BANNER DE COOKIES ──────────────────── */
@@ -30,13 +28,11 @@
     padding: 28px 32px;
     z-index: 10000;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
-    transition: opacity var(--transition-speed) ease,
-                transform var(--transition-speed) ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
     opacity: 1;
     font-family: 'Share Tech Mono', 'Courier New', monospace;
 }
 
-/* Estado oculto del banner */
 .cookie-banner.hidden {
     opacity: 0;
     transform: translateX(-50%) translateY(20px);
@@ -146,12 +142,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity var(--transition-speed) ease;
+    transition: opacity 0.3s ease;
     opacity: 1;
     padding: 20px;
 }
 
-/* Estado oculto del overlay */
 .cookie-settings-overlay.hidden {
     opacity: 0;
     pointer-events: none;
@@ -297,7 +292,6 @@
     transition: all 0.3s;
 }
 
-/* Switch activado */
 .switch input:checked + .slider {
     border-color: var(--gold);
 }
@@ -306,7 +300,6 @@
     transform: translateX(22px);
 }
 
-/* Switch deshabilitado (Necesarias) */
 .switch input:disabled + .slider {
     opacity: 0.6;
     cursor: not-allowed;
@@ -344,16 +337,9 @@
     transform: scale(1.05);
 }
 
-/* Animación de aparición */
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ─── RESPONSIVE ─────────────────────────── */
