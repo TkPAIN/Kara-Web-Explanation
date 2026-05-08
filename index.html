@@ -23,20 +23,39 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" preconnect>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-/* --- RESET & VARIABLES --- */
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{--primary:#c9a84c;--primary-dark:#a88830;--dark:#0a0b0f;--dark2:#111218;--gray:#6c6f78;--white:#fff;--border:#2a2a2a;}
-body{font-family:'Inter',sans-serif;background:var(--dark);color:#e0e0e0;line-height:1.5;}
+:root {
+  --primary: #c9a84c;
+  --primary-dark: #a88830;
+  --dark: #000;           /* antes #0a0b0f → ahora negro profundo puro */
+  --dark2: #0a0a0a;       /* tono ligeramente más claro que el fondo */
+  --gray: #6c6f78;
+  --white: #fff;
+  --border: #2a2a2a;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--dark);
+  color: #e0e0e0;
+  line-height: 1.5;
+}
 
 /* --- HEADER --- */
-.header{position:fixed;top:0;left:0;right:0;background:rgba(10,11,15,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);z-index:1000;padding:16px 0;}
-.container{max-width:1200px;margin:0 auto;padding:0 24px;}
-.header .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-.logo{font-size:1.5rem;font-weight:700;color:var(--primary);text-decoration:none;letter-spacing:-0.5px;}
-.logo span{color:var(--white);}
-.nav{display:flex;gap:32px;flex-wrap:wrap;}
-.nav a{color:#ccc;text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.2s;}
-.nav a:hover,.nav a.active{color:var(--primary);}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.95);  /* antes rgba(10,11,15,0.95) */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+  padding: 16px 0;
+}
 
 /* --- BUTTONS --- */
 .btn{display:inline-block;padding:12px 28px;border-radius:40px;font-weight:600;text-decoration:none;transition:all 0.2s;border:none;font-family:inherit;font-size:0.9rem;cursor:pointer;}
