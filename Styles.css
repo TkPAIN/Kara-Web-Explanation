@@ -1,0 +1,377 @@
+/* ================================================================
+   ESTILOS DEL SISTEMA DE COOKIES — Kara Tech
+   Fondo negro AMOLED, dorados, tipografía Cinzel + Share Tech Mono
+   ================================================================ */
+
+:root {
+    --gold: #c9a84c;
+    --gold-bright: #f0d080;
+    --dark: #000;
+    --dark2: #0a0a0a;
+    --dark3: #111;
+    --border: #2a2510;
+    --text: #e0e0e0;
+    --muted: #8b8b8b;
+    --red: #c0392b;
+    --transition-speed: 0.3s;
+}
+
+/* ─── BANNER DE COOKIES ──────────────────── */
+.cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 750px;
+    background: var(--dark2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 32px;
+    z-index: 10000;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    transition: opacity var(--transition-speed) ease,
+                transform var(--transition-speed) ease;
+    opacity: 1;
+    font-family: 'Share Tech Mono', 'Courier New', monospace;
+}
+
+/* Estado oculto del banner */
+.cookie-banner.hidden {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+    pointer-events: none;
+}
+
+.cookie-banner-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.cookie-banner-icon {
+    font-size: 2.5rem;
+    color: var(--gold);
+    flex-shrink: 0;
+}
+
+.cookie-banner-text {
+    flex: 1;
+    min-width: 200px;
+}
+
+.cookie-banner-text h2 {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    color: var(--gold);
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.cookie-banner-text p {
+    color: var(--muted);
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.cookie-banner-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+/* ─── BOTONES ────────────────────────────── */
+.cookie-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-family: 'Share Tech Mono', 'Courier New', monospace;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cookie-btn-accept {
+    background: var(--gold);
+    color: #000;
+    border: 2px solid var(--gold);
+}
+.cookie-btn-accept:hover {
+    background: var(--gold-bright);
+}
+
+.cookie-btn-reject {
+    background: transparent;
+    border: 2px solid var(--border);
+    color: var(--muted);
+}
+.cookie-btn-reject:hover {
+    border-color: var(--muted);
+    color: var(--text);
+}
+
+.cookie-btn-settings {
+    background: transparent;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+}
+.cookie-btn-settings:hover {
+    background: rgba(201, 168, 76, 0.1);
+}
+
+.cookie-btn-save {
+    background: var(--gold);
+    color: #000;
+    border: 2px solid var(--gold);
+    width: 100%;
+    justify-content: center;
+}
+.cookie-btn-save:hover {
+    background: var(--gold-bright);
+}
+
+/* ─── PANEL DE CONFIGURACIÓN (OVERLAY + MODAL) ─── */
+.cookie-settings-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity var(--transition-speed) ease;
+    opacity: 1;
+    padding: 20px;
+}
+
+/* Estado oculto del overlay */
+.cookie-settings-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cookie-settings-panel {
+    background: var(--dark2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+    font-family: 'Share Tech Mono', 'Courier New', monospace;
+}
+
+.cookie-settings-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.cookie-settings-header h2 {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    color: var(--gold);
+    font-size: 1.4rem;
+}
+
+.cookie-settings-close {
+    background: transparent;
+    border: 2px solid var(--border);
+    color: var(--muted);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+.cookie-settings-close:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.cookie-settings-desc {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* ─── CATEGORÍAS ────────────────────────── */
+.cookie-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.cookie-category {
+    background: var(--dark3);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    transition: border-color 0.2s;
+}
+.cookie-category:hover {
+    border-color: var(--gold);
+}
+
+.cookie-category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.cookie-category-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cookie-category-icon {
+    color: var(--gold);
+    font-size: 1.2rem;
+}
+
+.cookie-category-name {
+    color: var(--text);
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.cookie-category-desc {
+    color: var(--muted);
+    font-size: 0.78rem;
+    line-height: 1.5;
+    margin-top: 4px;
+}
+
+/* ─── TOGGLE SWITCH ──────────────────────── */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 26px;
+    flex-shrink: 0;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: var(--dark);
+    border: 2px solid var(--border);
+    border-radius: 26px;
+    transition: all 0.3s;
+}
+
+.slider::before {
+    content: '';
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 2px;
+    bottom: 2px;
+    background: var(--muted);
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+/* Switch activado */
+.switch input:checked + .slider {
+    border-color: var(--gold);
+}
+.switch input:checked + .slider::before {
+    background: var(--gold);
+    transform: translateX(22px);
+}
+
+/* Switch deshabilitado (Necesarias) */
+.switch input:disabled + .slider {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ─── ACCIONES DEL PANEL ────────────────── */
+.cookie-settings-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* ─── BOTÓN FLOTANTE ────────────────────── */
+.cookie-floating-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--dark2);
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    font-size: 1.3rem;
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+}
+.cookie-floating-btn:hover {
+    background: var(--gold);
+    color: #000;
+    transform: scale(1.05);
+}
+
+/* Animación de aparición */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ─── RESPONSIVE ─────────────────────────── */
+@media (max-width: 600px) {
+    .cookie-banner-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .cookie-banner-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+    .cookie-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .cookie-settings-panel {
+        padding: 20px;
+    }
+}
