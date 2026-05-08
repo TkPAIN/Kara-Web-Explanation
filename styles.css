@@ -390,3 +390,46 @@
     color: #000;
     transform: scale(1.08);
 }
+/* ─── BOTÓN PRINCIPAL DEL CLAN (K + Discord) ─── */
+.support-btn-main {
+    width: 56px;                /* un poco más grande */
+    height: 56px;
+    border-radius: 50%;
+    background: var(--dark2);
+    border: 2px solid var(--gold);
+    color: #fff;                /* letra blanca */
+    font-size: 1.6rem;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;     /* K arriba, icono abajo */
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    position: relative;
+    line-height: 1;
+}
+
+.support-btn-main .k-letter {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: -4px;
+}
+
+.support-btn-main .discord-icon {
+    font-size: 0.9rem;
+}
+
+.support-btn-main:hover {
+    background: var(--gold);
+    color: #000;
+    transform: scale(1.08);
+}
+.support-btn-main:hover .k-letter {
+    color: #000;
+}
+.support-btn-main:hover .discord-icon {
+    color: #000;
+}
