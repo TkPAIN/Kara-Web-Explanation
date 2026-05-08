@@ -3,108 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kara Tech — Blog | Tech Tips & Optimization</title>
-    <meta name="description" content="Tips, tutorials and news about technology and optimization. Windows, networking, and performance guides.">
+    <title>Kara Tech — Blog</title>
+    <meta name="description" content="Tips, guides and tutorials about Windows optimization, network performance and web development.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        :root {
-            --gold: #c9a84c;
-            --gold-bright: #f0d080;
-            --dark: #000;
-            --dark2: #0a0a0a;
-            --border: #2a2510;
-            --text: #e0e0e0;
-            --muted: #8b8b8b;
-        }
+        :root { --gold:#c9a84c; --gold-bright:#f0d080; --dark:#000; --dark2:#0a0a0a; --dark3:#111; --border:#2a2510; --text:#e0e0e0; --muted:#8b8b8b; }
         * { margin:0; padding:0; box-sizing:border-box; }
-        body {
-            font-family: 'Share Tech Mono', 'Courier New', monospace;
-            background: var(--dark);
-            color: var(--text);
-            line-height: 1.5;
-        }
-        .container { max-width: 900px; margin:0 auto; padding:0 20px; }
-        .gradient-text {
-            font-family: 'Cinzel', serif;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--gold), var(--gold-bright), var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .nav {
-            position:fixed; top:0; left:0; right:0;
-            background: rgba(0,0,0,0.97);
-            border-bottom:1px solid var(--border);
-            z-index:1000;
-            padding:12px 20px;
-            display:flex; align-items:center; justify-content:space-between;
-        }
-        .nav-logo {
-            font-family: 'Cinzel', serif;
-            font-weight:700; font-size:1.4rem;
-            color: var(--gold); text-decoration:none; letter-spacing:3px;
-        }
+        body { font-family:'Share Tech Mono','Courier New',monospace; background:var(--dark); color:var(--text); line-height:1.5; }
+        .container { max-width:1100px; margin:0 auto; padding:0 20px; }
+        .gradient-text { font-family:'Cinzel',serif; font-weight:900; background:linear-gradient(135deg,var(--gold),var(--gold-bright),var(--gold)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .nav { position:fixed; top:0; left:0; right:0; background:rgba(0,0,0,0.97); border-bottom:1px solid var(--border); z-index:1000; padding:12px 20px; display:flex; align-items:center; justify-content:space-between; }
+        .nav-logo { font-family:'Cinzel',serif; font-weight:700; font-size:1.4rem; color:var(--gold); text-decoration:none; letter-spacing:3px; }
         .nav-links { display:flex; gap:24px; list-style:none; }
-        .nav-links a {
-            color: var(--muted); text-decoration:none;
-            font-size:0.85rem; letter-spacing:1.5px; transition:color 0.2s;
-        }
-        .nav-links a:hover { color: var(--gold); }
-        .page-header {
-            padding: 120px 0 60px;
-            text-align: center;
-        }
-        .page-header h1 {
-            font-size: 2.5rem; margin-bottom:15px;
-        }
-        .page-header p { color: var(--muted); }
-        .post-list {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            padding-bottom: 80px;
-        }
-        .post {
-            background: var(--dark2);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 35px;
-            transition: transform 0.2s;
-        }
-        .post:hover { transform: translateY(-4px); }
-        .post-meta {
-            color: var(--muted);
-            font-size: 0.8rem;
-            margin-bottom: 10px;
-        }
-        .post h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-        .post p { color: var(--muted); margin-bottom: 15px; }
-        .read-more {
-            color: var(--gold);
-            text-decoration: none;
-            font-weight: bold;
-            letter-spacing: 1px;
-            transition: color 0.2s;
-        }
-        .read-more:hover { color: var(--gold-bright); }
-        .footer {
-            background: var(--dark2);
-            border-top:1px solid var(--border);
-            padding:30px 0;
-            text-align:center;
-            color:var(--muted);
-            font-size:0.8rem;
-        }
-        .footer a { color: var(--gold); text-decoration:none; }
+        .nav-links a { color:var(--muted); text-decoration:none; font-size:0.85rem; letter-spacing:1.5px; transition:color 0.2s; }
+        .nav-links a:hover { color:var(--gold); }
+        .page-header { padding:120px 0 60px; text-align:center; }
+        .page-header h1 { font-size:2.5rem; margin-bottom:15px; }
+        .page-header p { color:var(--muted); max-width:650px; margin:0 auto; font-size:1.05rem; }
+        .section { padding:20px 0 80px; }
+        .blog-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:30px; }
+        .blog-card { background:var(--dark2); border:1px solid var(--border); border-radius:14px; overflow:hidden; transition:transform 0.2s,border-color 0.2s; cursor:pointer; }
+        .blog-card:hover { transform:translateY(-6px); border-color:var(--gold); }
+        .blog-card-header { background:var(--dark3); padding:28px 28px 18px; border-bottom:1px solid var(--border); }
+        .blog-card-icon { font-size:2rem; color:var(--gold); margin-bottom:10px; }
+        .blog-card-tag { display:inline-block; background:rgba(201,168,76,0.12); border:1px solid var(--gold); color:var(--gold); padding:3px 12px; border-radius:20px; font-size:0.75rem; letter-spacing:1px; margin-bottom:12px; }
+        .blog-card h2 { font-family:'Cinzel',serif; font-weight:700; color:var(--text); font-size:1.1rem; line-height:1.4; }
+        .blog-card-body { padding:20px 28px 28px; }
+        .blog-card-body p { color:var(--muted); font-size:0.88rem; line-height:1.7; margin-bottom:18px; }
+        .blog-meta { display:flex; align-items:center; gap:14px; color:var(--muted); font-size:0.78rem; }
+        .blog-meta span { display:flex; align-items:center; gap:5px; }
+        .blog-meta i { color:var(--gold); }
+        .footer { background:var(--dark2); border-top:1px solid var(--border); padding:30px 0; text-align:center; color:var(--muted); font-size:0.8rem; }
+        .footer a { color:var(--gold); text-decoration:none; }
         @media (max-width:768px) { .nav-links { display:none; } }
     </style>
 </head>
@@ -117,37 +51,165 @@
             <li><a href="/services"><i class="fas fa-cogs"></i> Services</a></li>
             <li><a href="/blog"><i class="fas fa-newspaper"></i> Blog</a></li>
             <li><a href="/contact"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li><a href="/privacy"><i class="fas fa-shield-haltered"></i> Privacy</a></li>
+            <li><a href="/privacy"><i class="fas fa-shield-halved"></i> Privacy</a></li>
         </ul>
     </nav>
+
     <div class="container">
         <div class="page-header">
-            <h1 class="gradient-text">Blog & News</h1>
-            <p>Tips, tutorials and news about technology and optimization</p>
+            <h1 class="gradient-text">Blog & Guides</h1>
+            <p>Practical tutorials and tips to get the most out of your computer, network, and web presence.</p>
         </div>
-        <div class="post-list">
-            <article class="post">
-                <div class="post-meta"><i class="far fa-calendar"></i> May 15, 2026 — 5 min read</div>
-                <h3>How to speed up Windows 11: Complete guide</h3>
-                <p>Discover the best tips and scripts to optimize Windows 11 performance, reduce boot time, and improve gaming experience.</p>
-                <a href="#" class="read-more"><i class="fas fa-arrow-right"></i> Read more →</a>
-            </article>
-            <article class="post">
-                <div class="post-meta"><i class="far fa-calendar"></i> May 10, 2026 — 4 min read</div>
-                <h3>Reduce ping in online games with Nagle OFF</h3>
-                <p>Learn how disabling Nagle's algorithm can reduce your latency by up to 50% in competitive games like Valorant, League of Legends or CS2.</p>
-                <a href="#" class="read-more"><i class="fas fa-arrow-right"></i> Read more →</a>
-            </article>
-            <article class="post">
-                <div class="post-meta"><i class="far fa-calendar"></i> May 5, 2026 — 6 min read</div>
-                <h3>QoS DSCP 46: What it is and why it matters for gaming</h3>
-                <p>Everything you need to know about Quality of Service and how to prioritize your gaming traffic for a smoother online experience.</p>
-                <a href="#" class="read-more"><i class="fas fa-arrow-right"></i> Read more →</a>
-            </article>
+
+        <section class="section">
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-card-header">
+                        <div class="blog-card-icon"><i class="fab fa-windows"></i></div>
+                        <span class="blog-card-tag">WINDOWS</span>
+                        <h2>How to debloat Windows 11 in under 10 minutes</h2>
+                    </div>
+                    <div class="blog-card-body">
+                        <p>A step-by-step guide to removing preinstalled apps, disabling telemetry, and speeding up your boot time using our open-source PowerShell script.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Jan 2026</span>
+                            <span><i class="fas fa-clock"></i> 5 min read</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-card-header">
+                        <div class="blog-card-icon"><i class="fas fa-network-wired"></i></div>
+                        <span class="blog-card-tag">NETWORK</span>
+                        <h2>Reduce ping by 40% with these TCP/IP tweaks</h2>
+                    </div>
+                    <div class="blog-card-body">
+                        <p>Nagle's algorithm, buffer sizes, QoS policies and DNS-over-HTTPS explained in plain terms — with a ready-to-use script included.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Feb 2026</span>
+                            <span><i class="fas fa-clock"></i> 7 min read</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-card-header">
+                        <div class="blog-card-icon"><i class="fas fa-shield-alt"></i></div>
+                        <span class="blog-card-tag">PRIVACY</span>
+                        <h2>Stop Windows from tracking you — for real</h2>
+                    </div>
+                    <div class="blog-card-body">
+                        <p>We break down exactly which telemetry endpoints Windows phones home to and show you how to block them without breaking Windows Update.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Mar 2026</span>
+                            <span><i class="fas fa-clock"></i> 8 min read</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-card-header">
+                        <div class="blog-card-icon"><i class="fas fa-globe"></i></div>
+                        <span class="blog-card-tag">WEB DEV</span>
+                        <h2>Build a fast static site with GDPR cookies in one day</h2>
+                    </div>
+                    <div class="blog-card-body">
+                        <p>How we built the Kara Tech website: AMOLED design system, Cinzel typography, and a from-scratch GDPR consent manager with zero dependencies.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Apr 2026</span>
+                            <span><i class="fas fa-clock"></i> 10 min read</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-card-header">
+                        <div class="blog-card-icon"><i class="fas fa-gamepad"></i></div>
+                        <span class="blog-card-tag">GAMING</span>
+                        <h2>The ultimate gaming PC optimization checklist for 2026</h2>
+                    </div>
+                    <div class="blog-card-body">
+                        <p>From BIOS settings and XMP profiles to driver versions and GPU power limits — everything you need to max out your frames without spending a cent.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Apr 2026</span>
+                            <span><i class="fas fa-clock"></i> 12 min read</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-card-header">
+                        <div class="blog-card-icon"><i class="fas fa-wifi"></i></div>
+                        <span class="blog-card-tag">NETWORK</span>
+                        <h2>Best free DNS servers in Spain — tested & ranked</h2>
+                    </div>
+                    <div class="blog-card-body">
+                        <p>We benchmarked 12 public DNS resolvers from Spain, measuring latency, uptime, and privacy policies. Here are the results.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> May 2026</span>
+                            <span><i class="fas fa-clock"></i> 6 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 Kara Tech — Accessible technology for everyone.</p>
+        <p style="margin-top:8px;"><a href="/privacy"><i class="fas fa-lock"></i> Privacy Policy</a> · <a href="/cookies"><i class="fas fa-cookie-bite"></i> Cookie Policy</a></p>
+    </footer>
+
+    <!-- COOKIE BANNER -->
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-banner-title" aria-describedby="cookie-banner-desc" aria-hidden="false">
+        <div class="cookie-banner-content">
+            <div class="cookie-banner-icon"><i class="fas fa-cookie-bite"></i></div>
+            <div class="cookie-banner-text">
+                <h2 id="cookie-banner-title">🍪 Valoramos tu privacidad</h2>
+                <p id="cookie-banner-desc">Utilizamos cookies propias y de terceros para mejorar tu experiencia, analizar el tráfico y mostrarte contenido personalizado. Puedes aceptar todas, rechazar todas o personalizar tus preferencias.</p>
+            </div>
+            <div class="cookie-banner-actions">
+                <button class="cookie-btn cookie-btn-settings" onclick="openCookieSettings()" aria-label="Configurar preferencias"><i class="fas fa-sliders-h"></i> Configurar</button>
+                <button class="cookie-btn cookie-btn-reject" onclick="rejectAllCookies()" aria-label="Rechazar todas"><i class="fas fa-times"></i> Rechazar todas</button>
+                <button class="cookie-btn cookie-btn-accept" onclick="acceptAllCookies()" aria-label="Aceptar todas"><i class="fas fa-check"></i> Aceptar todas</button>
+            </div>
         </div>
     </div>
-    <footer class="footer">
-        <p>© 2026 Kara Tech — Accessible technology for everyone. Improve your computer's performance at no cost.</p>
-    </footer>
+    <div id="cookie-settings-overlay" class="cookie-settings-overlay" role="dialog" aria-labelledby="cookie-settings-title" aria-hidden="true">
+        <div class="cookie-settings-panel">
+            <div class="cookie-settings-header">
+                <h2 id="cookie-settings-title"><i class="fas fa-sliders-h"></i> Configurar cookies</h2>
+                <button class="cookie-settings-close" onclick="closeCookieSettings()" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+            </div>
+            <p class="cookie-settings-desc">Selecciona qué tipos de cookies permites. Las necesarias no se pueden desactivar.</p>
+            <div class="cookie-categories">
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <div class="cookie-category-info"><span class="cookie-category-icon"><i class="fas fa-shield-alt"></i></span><span class="cookie-category-name">Necesarias</span></div>
+                        <label class="switch"><input type="checkbox" id="cookie-cat-necessary" checked disabled><span class="slider"></span></label>
+                    </div>
+                    <p class="cookie-category-desc">Esenciales para el funcionamiento del sitio. No se pueden desactivar.</p>
+                </div>
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <div class="cookie-category-info"><span class="cookie-category-icon"><i class="fas fa-chart-line"></i></span><span class="cookie-category-name">Analíticas</span></div>
+                        <label class="switch"><input type="checkbox" id="cookie-cat-analytics"><span class="slider"></span></label>
+                    </div>
+                    <p class="cookie-category-desc">Nos ayudan a entender cómo usas el sitio. Información recogida de forma anónima.</p>
+                </div>
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <div class="cookie-category-info"><span class="cookie-category-icon"><i class="fas fa-ad"></i></span><span class="cookie-category-name">Marketing</span></div>
+                        <label class="switch"><input type="checkbox" id="cookie-cat-marketing"><span class="slider"></span></label>
+                    </div>
+                    <p class="cookie-category-desc">Utilizadas para mostrarte anuncios relevantes. Pueden compartir información con terceros.</p>
+                </div>
+            </div>
+            <div class="cookie-settings-actions"><button class="cookie-btn cookie-btn-save" onclick="saveCookieSettings()"><i class="fas fa-save"></i> Guardar preferencias</button></div>
+        </div>
+    </div>
+    <button id="cookie-floating-btn" class="cookie-floating-btn" onclick="openCookieSettings()" aria-label="Configurar cookies" title="Configurar cookies" style="display:none;"><i class="fas fa-cookie"></i></button>
+    <script src="cookies.js"></script>
 </body>
 </html>
