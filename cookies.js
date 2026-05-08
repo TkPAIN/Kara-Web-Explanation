@@ -4,35 +4,40 @@ const pendingScripts = [];
 
 function registerScript(src, category) { pendingScripts.push({ src, category }); }
 
-function loadScript(src) { … }
-async function loadConsentedScripts(allowedCategories) { … }
-function getStoredConsent() { … }
-function saveConsent(consent) { … }
-function acceptAllCookies() { … }
-function rejectAllCookies() { … }
-function saveCookieSettings() { … }
-function applyConsent(consent) { … }
-function hideBanner() { … }
-function showBanner() { … }
-function hideSettingsPanel() { … }
-function openCookieSettings() { … }
-function closeCookieSettings() { … }
-function showFloatingButton() { … }
-function initCookieSystem() { … }
-function clearCookieConsent() { … }
-window.clearCookieConsent = clearCookieConsent;
-document.addEventListener('DOMContentLoaded', initCookieSystem);        return stored ? JSON.parse(stored) : null;
-    } catch (e) {
-        return null;
+function loadScript(src) {
+    return new Promise((resolve, reject) => {
+        if (document.querySelector(`script[src="${src}"]`)) { resolve(); return; }
+        const script = document.createElement('script');
+        script.src = src;
+        script.async = true;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+    });
+}
+
+async function loadConsentedScripts(allowedCategories) {
+    for (const entry of pendingScripts) {
+        if (allowedCategories.includes(entry.category)) {
+            try {
+                await loadScript(entry.src);
+                console.log(`[Cookies] Cargado: ${entry.src}`);
+            } catch (e) {
+                console.warn(`[Cookies] Error al cargar: ${entry.src}`, e);
+            }
+        }
     }
 }
 
-function saveConsent(consent) {
+function getStoredConsent() {
     try {
-        localStorage.setItem(COOKIE_STORAGE_KEY, JSON.stringify(consent));
-    } catch (e) {
-        console.warn('[Cookies] No se pudo guardar el consentimiento.');
-    }
+        const stored = localStorage.getItem(COOKIE_STORAGE_KEY);
+        return stored ? JSON.parse(stored) : null;
+    } catch (e) { return null; }
+}
+
+function saveConsent(consent) {
+    localStorage.setItem(COOKIE_STORAGE_KEY, JSON.stringify(consent));
 }
 
 function acceptAllCookies() {
@@ -54,9 +59,9 @@ function rejectAllCookies() {
 }
 
 function saveCookieSettings() {
-    const analyticsChecked = document.getElementById('cookie-cat-analytics').checked;
-    const marketingChecked = document.getElementById('cookie-cat-marketing').checked;
-    const consent = { necessary: true, analytics: analyticsChecked, marketing: marketingChecked, timestamp: Date.now() };
+    const analytics = document.getElementById('cookie-cat-analytics').checked;
+    const marketing = document.getElementById('cookie-cat-marketing').checked;
+    const consent = { necessary: true, analytics, marketing, timestamp: Date.now() };
     saveConsent(consent);
     hideBanner();
     hideSettingsPanel();
@@ -103,9 +108,7 @@ function openCookieSettings() {
 
 function closeCookieSettings() {
     hideSettingsPanel();
-    if (!getStoredConsent()) {
-        showBanner();
-    }
+    if (!getStoredConsent()) showBanner();
 }
 
 function showFloatingButton() {
@@ -136,9 +139,3 @@ function clearCookieConsent() {
 window.clearCookieConsent = clearCookieConsent;
 
 document.addEventListener('DOMContentLoaded', initCookieSystem);
-
-// ================================================================
-// Registrar aquí tus scripts de terceros (descomenta y personaliza)
-// ================================================================
-// registerScript('https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX', CATEGORIES.analytics);
-// registerScript('https://connect.facebook.net/en_US/fbevents.js', CATEGORIES.marketing);
