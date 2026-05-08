@@ -4,48 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kara Tech — Cookie Policy</title>
-    <meta name="description" content="Cookie policy for Kara Tech. Learn how we use cookies and how to manage your preferences.">
+    <meta name="description" content="Learn how Kara Tech uses cookies to improve your browsing experience.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <style>
-        :root { --gold:#c9a84c; --gold-bright:#f0d080; --dark:#000; --dark2:#0a0a0a; --dark3:#111; --border:#2a2510; --text:#e0e0e0; --muted:#8b8b8b; }
+        :root { --gold: #c9a84c; --gold-bright: #f0d080; --dark: #000; --dark2: #0a0a0a; --border: #2a2510; --text: #e0e0e0; --muted: #8b8b8b; }
         * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family:'Share Tech Mono','Courier New',monospace; background:var(--dark); color:var(--text); line-height:1.5; }
-        .container { max-width:800px; margin:0 auto; padding:0 20px; }
-        .gradient-text { font-family:'Cinzel',serif; font-weight:900; background:linear-gradient(135deg,var(--gold),var(--gold-bright),var(--gold)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-        .nav { position:fixed; top:0; left:0; right:0; background:rgba(0,0,0,0.97); border-bottom:1px solid var(--border); z-index:1000; padding:12px 20px; display:flex; align-items:center; justify-content:space-between; }
-        .nav-logo { font-family:'Cinzel',serif; font-weight:700; font-size:1.4rem; color:var(--gold); text-decoration:none; letter-spacing:3px; }
+        body { font-family: 'Share Tech Mono', 'Courier New', monospace; background: var(--dark); color: var(--text); line-height: 1.6; }
+        .container { max-width: 800px; margin:0 auto; padding:0 20px; }
+        .gradient-text {
+            font-family: 'Cinzel', serif; font-weight: 900;
+            background: linear-gradient(135deg, var(--gold), var(--gold-bright), var(--gold));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .nav {
+            position: fixed; top:0; left:0; right:0;
+            background: rgba(0,0,0,0.97); border-bottom:1px solid var(--border);
+            z-index:1000; padding:12px 20px;
+            display:flex; align-items:center; justify-content:space-between;
+        }
+        .nav-logo { font-family: 'Cinzel', serif; font-weight:700; font-size:1.4rem; color: var(--gold); text-decoration:none; letter-spacing:3px; }
         .nav-links { display:flex; gap:24px; list-style:none; }
-        .nav-links a { color:var(--muted); text-decoration:none; font-size:0.85rem; letter-spacing:1.5px; transition:color 0.2s; }
-        .nav-links a:hover { color:var(--gold); }
-        .page-header { padding:120px 0 50px; text-align:center; }
-        .page-header h1 { font-size:2.3rem; margin-bottom:12px; }
-        .page-header p { color:var(--muted); font-size:0.88rem; }
-        .content { padding:10px 0 80px; }
-        .policy-section { margin-bottom:40px; }
-        .policy-section h2 { font-family:'Cinzel',serif; font-weight:700; color:var(--gold); font-size:1.15rem; margin-bottom:14px; border-bottom:1px solid var(--border); padding-bottom:10px; }
-        .policy-section p, .policy-section li { color:var(--muted); font-size:0.9rem; line-height:1.8; margin-bottom:10px; }
-        .policy-section ul { padding-left:20px; }
-        .cookie-table { width:100%; border-collapse:collapse; margin:16px 0; font-size:0.85rem; }
-        .cookie-table th { background:var(--dark3); color:var(--gold); padding:10px 14px; text-align:left; border:1px solid var(--border); font-family:'Cinzel',serif; }
-        .cookie-table td { padding:10px 14px; border:1px solid var(--border); color:var(--muted); vertical-align:top; }
-        .cookie-table tr:hover td { background:var(--dark3); }
-        .badge { display:inline-block; padding:2px 10px; border-radius:12px; font-size:0.75rem; font-weight:700; }
-        .badge-necessary { background:rgba(201,168,76,0.15); border:1px solid var(--gold); color:var(--gold); }
-        .badge-analytics { background:rgba(100,180,255,0.1); border:1px solid #5ab; color:#8cf; }
-        .badge-marketing { background:rgba(255,100,100,0.1); border:1px solid #a55; color:#f99; }
-        .btn-gold { display:inline-block; padding:11px 26px; border:1px solid var(--gold); color:var(--gold); text-decoration:none; border-radius:6px; font-weight:bold; letter-spacing:1.5px; transition:all 0.25s; cursor:pointer; background:transparent; font-family:'Share Tech Mono',monospace; font-size:0.88rem; }
-        .btn-gold:hover { background:var(--gold); color:#000; }
-        .btn-danger { display:inline-block; padding:11px 26px; border:1px solid #a33; color:#f88; text-decoration:none; border-radius:6px; font-weight:bold; letter-spacing:1.5px; transition:all 0.25s; cursor:pointer; background:transparent; font-family:'Share Tech Mono',monospace; font-size:0.88rem; margin-left:12px; }
-        .btn-danger:hover { background:#a33; color:#fff; }
-        .action-box { background:var(--dark2); border:1px solid var(--border); border-radius:12px; padding:28px; text-align:center; margin-top:20px; }
-        .action-box p { color:var(--muted); margin-bottom:16px; font-size:0.9rem; }
-        .footer { background:var(--dark2); border-top:1px solid var(--border); padding:30px 0; text-align:center; color:var(--muted); font-size:0.8rem; }
-        .footer a { color:var(--gold); text-decoration:none; }
-        @media (max-width:768px) { .nav-links { display:none; } .cookie-table { font-size:0.78rem; } }
+        .nav-links a { color: var(--muted); text-decoration:none; font-size:0.85rem; letter-spacing:1.5px; }
+        .nav-links a:hover { color: var(--gold); }
+        .page-header { padding: 120px 0 60px; text-align: center; }
+        .page-header h1 { font-size: 2.5rem; margin-bottom:15px; }
+        .page-header p { color: var(--muted); }
+        .content { padding-bottom: 80px; }
+        .content h2 { font-family: 'Cinzel', serif; color: var(--gold); margin:30px 0 15px; font-size:1.5rem; }
+        .content p, .content li { color: var(--muted); margin-bottom:12px; }
+        .content ul { list-style: none; padding-left:0; }
+        .content ul li::before { content: '•'; color: var(--gold); margin-right:8px; }
+        .footer {
+            background: var(--dark2); border-top:1px solid var(--border);
+            padding:30px 0; text-align:center; color: var(--muted); font-size:0.8rem;
+        }
+        .footer a { color: var(--gold); text-decoration:none; }
+        @media (max-width:768px) { .nav-links { display:none; } }
     </style>
 </head>
 <body>
@@ -57,78 +55,34 @@
             <li><a href="/services"><i class="fas fa-cogs"></i> Services</a></li>
             <li><a href="/blog"><i class="fas fa-newspaper"></i> Blog</a></li>
             <li><a href="/contact"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li><a href="/privacy"><i class="fas fa-shield-halved"></i> Privacy</a></li>
+            <li><a href="/privacy"><i class="fas fa-shield-haltered"></i> Privacy</a></li>
         </ul>
     </nav>
 
     <div class="container">
         <div class="page-header">
-            <h1 class="gradient-text">Cookie Policy</h1>
-            <p>Last updated: May 2026 · Compliant with RGPD / GDPR (EU) 2016/679</p>
+            <h1 class="gradient-text"><i class="fas fa-cookie-bite"></i> Cookie Policy</h1>
+            <p>Last updated: May 2026</p>
         </div>
-
         <div class="content">
-            <div class="policy-section">
-                <h2><i class="fas fa-info-circle"></i> What are cookies?</h2>
-                <p>Cookies are small text files stored on your device when you visit a website. They help the site remember your preferences, understand how you use it, and in some cases display relevant advertising.</p>
-                <p>We believe in full transparency. This page explains exactly which cookies we use, why, and how you can control them at any time.</p>
-            </div>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-shield-alt"></i> Necessary cookies</h2>
-                <p>These cookies are strictly required for the website to function. They cannot be disabled.</p>
-                <table class="cookie-table">
-                    <thead><tr><th>Name</th><th>Purpose</th><th>Duration</th><th>Type</th></tr></thead>
-                    <tbody>
-                        <tr><td>kara_tech_cookie_consent</td><td>Stores your cookie consent preferences</td><td>1 year</td><td><span class="badge badge-necessary">Necessary</span></td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-chart-line"></i> Analytical cookies</h2>
-                <p>These cookies help us understand how visitors interact with our website. All data is collected anonymously and used solely to improve the site experience.</p>
-                <table class="cookie-table">
-                    <thead><tr><th>Name</th><th>Purpose</th><th>Duration</th><th>Type</th></tr></thead>
-                    <tbody>
-                        <tr><td>_ga</td><td>Google Analytics — distinguishes users</td><td>2 years</td><td><span class="badge badge-analytics">Analytics</span></td></tr>
-                        <tr><td>_ga_XXXXXXXX</td><td>Google Analytics — session state</td><td>2 years</td><td><span class="badge badge-analytics">Analytics</span></td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-ad"></i> Marketing cookies</h2>
-                <p>These cookies are used to deliver relevant advertisements and measure the effectiveness of advertising campaigns. They may share data with third-party platforms.</p>
-                <table class="cookie-table">
-                    <thead><tr><th>Name</th><th>Purpose</th><th>Duration</th><th>Type</th></tr></thead>
-                    <tbody>
-                        <tr><td>_fbp</td><td>Facebook Pixel — tracks conversions</td><td>3 months</td><td><span class="badge badge-marketing">Marketing</span></td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-sliders-h"></i> How to manage your preferences</h2>
-                <p>You can change your cookie preferences at any time using the floating cookie button <i class="fas fa-cookie" style="color:var(--gold)"></i> at the bottom right of any page, or using the buttons below.</p>
-                <p>You can also control cookies through your browser settings. Note that disabling certain cookies may affect the functionality of the site.</p>
-                <div class="action-box">
-                    <p>Manage or reset your cookie consent for this site:</p>
-                    <button class="btn-gold" onclick="openCookieSettings()"><i class="fas fa-sliders-h"></i> Open preferences</button>
-                    <button class="btn-danger" onclick="clearCookieConsent()"><i class="fas fa-trash"></i> Reset consent</button>
-                </div>
-            </div>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-envelope"></i> Contact</h2>
-                <p>If you have any questions about this Cookie Policy, please contact us at <a href="mailto:hello@karatech.dev" style="color:var(--gold)">hello@karatech.dev</a> or visit our <a href="/contact" style="color:var(--gold)">contact page</a>.</p>
-            </div>
+            <p>This Cookie Policy explains how Kara Tech uses cookies and similar technologies on our website.</p>
+            <h2><i class="fas fa-question-circle"></i> What are cookies?</h2>
+            <p>Cookies are small text files that are stored on your device when you visit a website. They help us remember your preferences and improve your browsing experience.</p>
+            <h2><i class="fas fa-list"></i> Types of cookies we use</h2>
+            <ul>
+                <li><strong>Necessary cookies:</strong> Essential for the website to function. Cannot be disabled.</li>
+                <li><strong>Analytics cookies:</strong> Help us understand how visitors use our site.</li>
+                <li><strong>Marketing cookies:</strong> Used to display relevant advertisements.</li>
+            </ul>
+            <h2><i class="fas fa-sliders-h"></i> How to manage cookies</h2>
+            <p>You can manage your cookie preferences using our cookie settings panel, accessible through the cookie banner.</p>
+            <h2><i class="fas fa-envelope"></i> Contact us</h2>
+            <p>If you have questions about our Cookie Policy, please contact us at <span style="color:var(--gold);">karateckwinopt@gmail.com</span>.</p>
         </div>
     </div>
 
     <footer class="footer">
         <p>© 2026 Kara Tech — Accessible technology for everyone.</p>
-        <p style="margin-top:8px;"><a href="/privacy"><i class="fas fa-lock"></i> Privacy Policy</a> · <a href="/cookies"><i class="fas fa-cookie-bite"></i> Cookie Policy</a></p>
     </footer>
 
     <!-- COOKIE BANNER -->
@@ -166,14 +120,14 @@
                         <div class="cookie-category-info"><span class="cookie-category-icon"><i class="fas fa-chart-line"></i></span><span class="cookie-category-name">Analíticas</span></div>
                         <label class="switch"><input type="checkbox" id="cookie-cat-analytics"><span class="slider"></span></label>
                     </div>
-                    <p class="cookie-category-desc">Nos ayudan a entender cómo usas el sitio. Información recogida de forma anónima.</p>
+                    <p class="cookie-category-desc">Nos ayudan a entender cómo usas el sitio (Google Analytics, etc.). Toda la información se recoge de forma anónima.</p>
                 </div>
                 <div class="cookie-category">
                     <div class="cookie-category-header">
                         <div class="cookie-category-info"><span class="cookie-category-icon"><i class="fas fa-ad"></i></span><span class="cookie-category-name">Marketing</span></div>
                         <label class="switch"><input type="checkbox" id="cookie-cat-marketing"><span class="slider"></span></label>
                     </div>
-                    <p class="cookie-category-desc">Utilizadas para mostrarte anuncios relevantes. Pueden compartir información con terceros.</p>
+                    <p class="cookie-category-desc">Utilizadas para mostrarte anuncios relevantes (Facebook Pixel, etc.). Pueden compartir información con terceros.</p>
                 </div>
             </div>
             <div class="cookie-settings-actions"><button class="cookie-btn cookie-btn-save" onclick="saveCookieSettings()"><i class="fas fa-save"></i> Guardar preferencias</button></div>
